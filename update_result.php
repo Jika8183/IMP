@@ -9,6 +9,17 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            top: 0;
+            z-index: 1000; /* 다른 요소 위에 표시하기 위한 z-index 값 */
         }
 
         table {
@@ -32,9 +43,26 @@
             margin-top: 10px;
             margin-right: 10px;
         }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+
+<header>
+    <h2>데이터 수정 결과</h2>
+    <button onclick="location.href='main.php'">메인</button>
+    <button onclick="location.href='insert.php'">추가하기</button>
+    <button onclick="location.href='update_select.php'">수정하기</button>
+    <button onclick="location.href='delete_select.php'">삭제하기</button>
+</header>
 
 <?php
 // POST로 전달된 데이터 확인
@@ -92,11 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "<p>저장된 데이터가 없습니다.</p>";
     }
-
-    // 버튼들
-    echo '<button onclick="location.href=\'insert.php\'">추가하기</button>';
-    echo '<button onclick="location.href=\'update_select.php\'">수정하기</button>';
-    echo '<button onclick="location.href=\'delete_select.php\'">삭제하기</button>';
 
 
     // 연결 종료

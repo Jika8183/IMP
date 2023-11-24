@@ -10,6 +10,17 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            top: 0;
+            z-index: 1000; /* 다른 요소 위에 표시하기 위한 z-index 값 */
         }
 
         table {
@@ -36,31 +47,32 @@
             padding: 8px;
             margin-right: 10px;
         }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+
+<header>
     <h1>재고 관리 프로그램</h1>
+    <button onclick="location.href='insert.php'">추가</button>
+    <button onclick="location.href='update_select.php'">수정</button>
+    <button onclick="location.href='delete_select.php'">삭제</button>
+</header>
 
-    <form action="insert.php" method="get">
-        <button type="submit">추가</button>
-    </form>
-
-    <form action="update_select.php" method="get">
-        <button type="submit">수정</button>
-    </form>
-
-    <form action="delete_select.php" method="get">
-        <button type="submit">삭제</button>
-    </form>
-
-    <table id="inventoryTable">
-        <thead>
-            <tr>
-                <th>품목명</th>
-                <th>수량</th>
-            </tr>
-        </thead>
-        <tbody>
+<table id="inventoryTable">
+    <thead>
+        
+        
+    </thead>
+    <tbody>
         <?php
             // MySQL 연결 설정
             $servername = "localhost";
@@ -83,11 +95,13 @@
             if ($result->num_rows > 0) {
                 echo "<h2>전체 저장된 목록</h2>";
                 echo "<table>";
-                echo "<thead><tr><th>품목명</th><th>수량</th></tr></thead>";
+                echo "<thead><tr><th>발주일</th><th>품목명</th><th>수량</th><th>단가</th><th>주문총액</th><th>주문한 학교명</th><th>공급사</th><th>메모</th></tr></thead>";
                 echo "<tbody>";
 
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr><td>" . $row["itemName"] . "</td><td>" . $row["itemQuantity"] . "</td></tr>";
+                    echo "<tr><td>" . $row["orderDate"] . "</td><td>" . $row["itemName"] . "</td><td>" . $row["itemQuantity"] . "</td>";
+                    echo "<td>" . $row["unitPrice"] . "</td><td>" . $row["orderTotal"] . "</td>";
+                    echo "<td>" . $row["schoolName"] . "</td><td>" . $row["supplier"] . "</td><td>" . $row["memo"] . "</td></tr>";
                 }
 
                 echo "</tbody></table>";
@@ -98,7 +112,7 @@
             // 연결 종료
             $conn->close();
         ?>
-        </tbody>
-    </table>
+    </tbody>
+</table>
 </body>
 </html>
