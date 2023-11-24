@@ -30,6 +30,7 @@
         button {
             padding: 8px;
             margin-top: 10px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -95,6 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 버튼들
     echo '<button onclick="location.href=\'insert.php\'">추가하기</button>';
     echo '<button onclick="location.href=\'update_select.php\'">수정하기</button>';
+    echo '<button onclick="location.href=\'delete_select.php\'">삭제하기</button>';
+
 
     // 연결 종료
     $conn->close();

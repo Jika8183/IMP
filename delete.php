@@ -41,7 +41,6 @@
     <h2>데이터 삭제</h2>
 
     <?php
-    // 검색 폼에서 데이터를 받아오기
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['searchItem'])) {
         // MySQL 연결 설정
         $servername = "localhost";
@@ -77,7 +76,7 @@
                 echo "<tr>";
                 echo "<td>" . $row["itemName"] . "</td>";
                 echo "<td>" . $row["itemQuantity"] . "</td>";
-                echo "<td><input type='checkbox' name='deleteItems[]' value='" . $row["itemID"] . "' /></td>";
+                echo "<td><input type='checkbox' name='deleteItems[]' value='" . $row["id"] . "' /></td>"; // id로 수정
                 echo "</tr>";
             }
 

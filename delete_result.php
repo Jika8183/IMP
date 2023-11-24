@@ -36,6 +36,7 @@
 </head>
 <body>
 
+
 <?php
 // POST로 전달된 데이터 확인
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteItems'])) {
@@ -54,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteItems'])) {
     }
 
     // POST로 전달된 데이터 받기
-    $itemID = isset($_POST['itemID']) ? $_POST['itemID'] : '';
+    $deleteItems = isset($_POST['deleteItems']) ? $_POST['deleteItems'] : array();
 
     // 배열에 있는 모든 아이템 삭제
     foreach ($deleteItems as $itemID) {
         // 데이터베이스에서 데이터 삭제
-        $deleteQuery = "DELETE FROM items WHERE id=$itemID";
+        $deleteQuery = "DELETE FROM items WHERE id = $itemID"; // id로 수정
 
         // 쿼리 실행 결과 확인
         if ($conn->query($deleteQuery) !== TRUE) {

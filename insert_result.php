@@ -60,7 +60,9 @@
         $sql = "INSERT INTO items (itemName, itemQuantity) VALUES ('$itemName', '$itemQuantity')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "<p>데이터가 성공적으로 저장되었습니다.</p>";
+            $lastInsertedID = $conn->insert_id; // 새로 추가된 레코드의 itemID 얻기
+
+            echo "<p>데이터가 성공적으로 저장되었습니다. 추가된 아이템 ID: $lastInsertedID</p>";
         } else {
             echo "<p>Error: " . $sql . "<br>" . $conn->error . "</p>";
         }
@@ -87,7 +89,8 @@
         // 버튼들
         echo '<button onclick="location.href=\'insert.php\'">추가하기</button>';
         echo '<button onclick="location.href=\'update_select.php\'">수정하기</button>';
-
+        echo '<button onclick="location.href=\'delete_select.php\'">삭제하기</button>';
+        
         // 연결 종료
         $conn->close();
     }
