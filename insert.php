@@ -81,6 +81,14 @@
                     <option value="오이">오이</option>
                     <option value="고추">고추</option>
                     <option value="감자">감자</option>
+                    <option value="백미">백미</option>
+                    <option value="친환경쌀">친환경쌀</option>
+                    <option value="잡곡">잡곡</option>
+                    <option value="소고기">소고가</option>
+                    <option value="토마호크">토마호크</option>
+                    <option value="대방어">대방어</option>
+                    <option value="고등어">고등어</option>
+
                     <!-- 다른 품목들도 필요에 따라 추가 -->
                 </select>
             </div>
@@ -92,12 +100,12 @@
 
             <div class="form-group">
                 <label for="unitPrice">단가(원):</label>
-                <input type="number" class="form-control form-group-half" id="unitPrice" name="unitPrice" step="0.01" required oninput="calculateOrderTotal()" />
+                <input type="number" class="form-control form-group-half" id="unitPrice" name="unitPrice" step="1" required oninput="calculateOrderTotal()" />
             </div>
 
             <div class="form-group">
                 <label for="orderTotal">주문총액(원):</label>
-                <input type="number" class="form-control form-group-half" id="orderTotal" name="orderTotal" step="0.01" readonly />
+                <input type="number" class="form-control form-group-half" id="orderTotal" name="orderTotal" step="1" readonly />
             </div>
 
             <div class="form-group">

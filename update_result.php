@@ -1,4 +1,3 @@
-<!-- update_result.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,14 +84,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $itemID = isset($_POST['itemID']) ? $_POST['itemID'] : '';
     $itemName = $_POST['itemName'];
     $itemQuantity = $_POST['itemQuantity'];
+    $unitPrice = $_POST['unitPrice'];
+    $orderTotal = $_POST['orderTotal'];
+    $schoolName = $_POST['schoolName'];
+    $supplier = $_POST['supplier'];
+    $memo = $_POST['memo'];
 
     // 'itemID' 변수가 정의되어 있는지 확인
     if (!empty($itemID)) {
         // 데이터베이스에서 데이터 수정
-        $updateQuery = "UPDATE items SET itemName='$itemName', itemQuantity=$itemQuantity WHERE id=$itemID";
+        $updateQuery = "UPDATE items SET 
+                        itemName='$itemName', 
+                        itemQuantity=$itemQuantity, 
+                        unitPrice=$unitPrice, 
+                        orderTotal=$orderTotal, 
+                        schoolName='$schoolName', 
+                        supplier='$supplier', 
+                        memo='$memo' 
+                        WHERE id=$itemID";
 
         // 쿼리 실행 결과 확인
         if ($conn->query($updateQuery) === TRUE) {
+            echo "<br />";
             echo "데이터가 성공적으로 수정되었습니다.";
         } else {
             echo "Error: " . $updateQuery . "<br>" . $conn->error;
@@ -109,18 +122,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         echo "<h2>전체 저장된 목록</h2>";
         echo "<table>";
-        echo "<thead><tr><th>품목명</th><th>수량</th></tr></thead>";
+        echo "<thead><tr><th>날짜</th><th>품목명</th><th>수량</th><th>단가</th><th>주문총액</th><th>학교명</th><th>공급사</th><th>메모</th></tr></thead>";
         echo "<tbody>";
 
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["itemName"] . "</td><td>" . $row["itemQuantity"] . "</td></tr>";
+            echo "<tr>";
+            echo "<td>" . $row["orderDate"] . "</td>";
+            echo "<td>" . $row["itemName"] . "</td>";
+            echo "<td>" . $row["itemQuantity"] . "</td>";
+            echo "<td>" . $row["unitPrice"] . "</td>";
+            echo "<td>" . $row["orderTotal"] . "</td>";
+            echo "<td>" . $row["schoolName"] . "</td>";
+            echo "<td>" . $row["supplier"] . "</td>";
+            echo "<td>" . $row["memo"] . "</td>";
+            echo "</tr>";
         }
 
         echo "</tbody></table>";
     } else {
         echo "<p>저장된 데이터가 없습니다.</p>";
     }
-
 
     // 연결 종료
     $conn->close();

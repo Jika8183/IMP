@@ -1,5 +1,4 @@
 <!-- delete_result.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +65,6 @@
     <button onclick="location.href='delete_select.php'">삭제하기</button>
 </header>
 
-
 <?php
 // POST로 전달된 데이터 확인
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteItems'])) {
@@ -106,20 +104,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteItems'])) {
 
     // 조회 결과가 있는 경우 테이블로 표시
     if ($result->num_rows > 0) {
+    
         echo "<h2>전체 저장된 목록</h2>";
         echo "<table>";
-        echo "<thead><tr><th>품목명</th><th>수량</th></tr></thead>";
+        echo "<thead><tr><th>날짜</th><th>품목명</th><th>수량</th><th>단가</th><th>주문총액</th><th>주문한 학교명</th><th>공급사</th><th>메모</th></tr></thead>";
         echo "<tbody>";
 
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["itemName"] . "</td><td>" . $row["itemQuantity"] . "</td></tr>";
+            echo "<tr>";
+            echo "<td>" . $row["orderDate"] . "</td>";
+            echo "<td>" . $row["itemName"] . "</td>";
+            echo "<td>" . $row["itemQuantity"] . "</td>";
+            echo "<td>" . $row["unitPrice"] . "</td>";
+            echo "<td>" . $row["orderTotal"] . "</td>";
+            echo "<td>" . $row["schoolName"] . "</td>";
+            echo "<td>" . $row["supplier"] . "</td>";
+            echo "<td>" . $row["memo"] . "</td>";
+            echo "</tr>";
         }
 
         echo "</tbody></table>";
     } else {
         echo "<p>저장된 데이터가 없습니다.</p>";
     }
-
 
     // 연결 종료
     $conn->close();
