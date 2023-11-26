@@ -84,7 +84,7 @@
                     <option value="백미">백미</option>
                     <option value="친환경쌀">친환경쌀</option>
                     <option value="잡곡">잡곡</option>
-                    <option value="소고기">소고가</option>
+                    <option value="소고기">소고기</option>
                     <option value="토마호크">토마호크</option>
                     <option value="대방어">대방어</option>
                     <option value="고등어">고등어</option>

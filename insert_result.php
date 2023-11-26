@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // POST로 전달된 데이터 받기
     $itemName = $_POST['itemSelect'];
     $itemQuantity = $_POST['itemQuantity'];
-    $orderDate = date("Y-m-d"); // 현재 날짜
+    $orderDate = $_POST['orderDate'];
     $unitPrice = $_POST['unitPrice'];
     $orderTotal = $itemQuantity * $unitPrice; // 주문총액 계산
 

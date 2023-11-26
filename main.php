@@ -65,6 +65,7 @@
     <button onclick="location.href='insert.php'">추가</button>
     <button onclick="location.href='update_select.php'">수정</button>
     <button onclick="location.href='delete_select.php'">삭제</button>
+    <button onclick="location.href='reading_mode.php'">읽기모드</button>
 </header>
 
 <table id="inventoryTable">

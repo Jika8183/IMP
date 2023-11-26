@@ -82,15 +82,18 @@
                 echo "<label for='orderDate'>발주일:   </label>";
                 echo "<input type='date' id='orderDate' name='orderDate' value='" . $row["orderDate"] . "' required /><br />";
                 
-                 // 품목 선택
+                // 품목 선택
                 echo "<label for='itemSelect'>품목 선택:</label>";
                 echo "<select id='itemSelect' name='itemSelect'>";
-                 $items = array("오이", "고추", "감자", "백미", "친환경쌀", "잡곡", "소고기", "토마호크", "대방어", "고등어"); // 필요에 따라 데이터베이스에서 가져오도록 변경
+                $items = array("오이", "고추", "감자", "백미", "친환경쌀", "잡곡", "소고기", "토마호크", "대방어", "고등어");
+
                 foreach ($items as $item) {
                     $selected = ($item == $row["itemName"]) ? "selected" : "";
                     echo "<option value='$item' $selected>$item</option>";
                 }
+
                 echo "</select><br />";
+
 
                 echo "<label for='itemQuantity'>수량:     </label>";
                 echo "<input type='number' id='itemQuantity' name='itemQuantity' value='" . $row["itemQuantity"] . "' required /><br />";

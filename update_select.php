@@ -13,6 +13,7 @@
 
         form {
             margin-top: 20px;
+            display: flex; /* 검색 조건과 검색어를 가로로 배치하기 위해 추가 */
         }
 
         select, input, button {
