@@ -5,31 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>데이터 수정</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #FEFFDE; /* 이쁜 배경색으로 변경 */
+    }
 
-        form {
-            margin-top: 20px;
-        }
+    form {
+        margin-top: 20px;
+    }
 
-        input, button {
-            padding: 8px;
-            margin-right: 10px;
-        }
+    input, button {
+        padding: 8px;
+        margin-right: 10px;
+        border: 1px solid #52734D; /* 테두리 색상 변경 */
+        background-color: #FEFFDE; /* 배경색 변경 */
+       
+    }
 
-        .result-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
+    .result-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-        .result-item {
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-    </style>
+    .result-item {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc; /* 테두리 색상 변경 */
+        background-color: #DDFFBC; /* 배경색 변경 */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    }
+</style>
+
      <script>
        function calculateOrderTotal() {
             var quantity = parseFloat(document.getElementById('itemQuantity').value);
@@ -83,8 +90,8 @@
                 echo "<input type='date' id='orderDate' name='orderDate' value='" . $row["orderDate"] . "' required /><br />";
                 
                 // 품목 선택
-                echo "<label for='itemSelect'>품목 선택:</label>";
-                echo "<select id='itemSelect' name='itemSelect'>";
+                echo "<label for='itemName'>품목 선택:</label>";
+                echo "<select id='itemName' name='itemName'>";
                 $items = array("오이", "고추", "감자", "백미", "친환경쌀", "잡곡", "소고기", "토마호크", "대방어", "고등어");
 
                 foreach ($items as $item) {

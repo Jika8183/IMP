@@ -12,7 +12,9 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #FEFFDE;
         }
+        
 
         form {
             margin-top: 20px;
@@ -24,6 +26,7 @@
 
         button {
             margin-top: 20px;
+            color: #52734D; 
         }
 
         .form-group {

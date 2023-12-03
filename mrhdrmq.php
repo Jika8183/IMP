@@ -71,10 +71,7 @@
 
 <header>
     <h1>재고 관리 프로그램</h1>
-    <button onclick="location.href='insert.php'">추가</button>
-    <button onclick="location.href='update_select.php'">수정</button>
-    <button onclick="location.href='delete_select.php'">삭제</button>
-    <button onclick="location.href='reading_mode.php'">읽기모드</button>
+    <button onclick="location.href='mreading_mode.php'">읽기모드</button>
     <button onclick="location.href='login.php'">로그아웃</button>
 </header>
 

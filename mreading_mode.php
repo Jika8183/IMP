@@ -58,14 +58,14 @@
     
 
     <h2>읽기 모드</h2>
-    <button onclick="location.href='main.php'">메인</button>
-    <form action="reading_mode.php" method="get"> <!-- 수정된 부분: action을 현재 페이지로 설정 -->
+    <button onclick="location.href='mrhdrmq.php'">메인</button>
+    <form action="mreading_mode.php" method="get"> <!-- 수정된 부분: action을 현재 페이지로 설정 -->
         <label for="searchCondition">검색 조건 선택:</label>
         <select id="searchCondition" name="searchCondition" required>
+            <option value="supplier">공급사</option>
             <option value="orderDate">발주일</option>
             <option value="itemName">품목</option>
             <option value="schoolName">학교명</option>
-            <option value="supplier">공급사</option>
         </select>
 
         <label for="searchValue">검색어:</label>
@@ -133,7 +133,6 @@
         }
         ?>
     </div>
-
     <script>
         document.getElementById('searchCondition').addEventListener('change', function () {
             var searchValueContainer = document.getElementById('searchValueContainer');
@@ -188,6 +187,7 @@
 
         // 초기 로딩 시에도 검색 조건에 따라 옵션을 표시
         document.getElementById('searchCondition').dispatchEvent(new Event('change'));
-    </script>
+    </script> 
+    
 </body>
 </html>

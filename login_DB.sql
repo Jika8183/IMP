@@ -1,19 +1,22 @@
--- 데이터베이스 생성
-CREATE DATABASE IF NOT EXISTS your_database_name;
-USE your_database_name;
+DROP USER 'manager'@'%';
+CREATE USER 'manager'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'manager'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+-- users 테이블 생성 쿼리
 
--- 사용자 테이블 생성
-CREATE TABLE IF NOT EXISTS users (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  organization VARCHAR(255) NOT NULL,
-  username VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  is_admin BOOLEAN NOT NULL DEFAULT 0
+CREATE DATABASE user_db;
+USE user_db;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userid VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    rlrhks INT NOT NULL
 );
 
--- 각 기관의 관리자 계정 추가
-INSERT INTO users (organization, username, password, is_admin)
-VALUES
-    ('공공급식센터', 'admin1', '1111', 1),
-    ('학교', 'admin2', '2222', 1),
-    ('교육청', 'admin3', '3333', 1);
+-- 사용자 추가 예시
+INSERT INTO users (userid, password, rlrhks) VALUES ('root', '0000', -1);
+INSERT INTO users (userid, password, rlrhks) VALUES ('school1', '1111', 0);
+INSERT INTO users (userid, password, rlrhks) VALUES ('school2', '1111', 0);
+INSERT INTO users (userid, password, rlrhks) VALUES ('rmqtlr', '1111', 1);
+INSERT INTO users (userid, password, rlrhks) VALUES ('rhdrmq1', '1111', 2);
+INSERT INTO users (userid, password, rlrhks) VALUES ('rhqrmq2', '1111', 2);

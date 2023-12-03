@@ -1,62 +1,56 @@
-/* login_styles.css */
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-  }
+  font-family: Arial, sans-serif; /* 원하는 폰트로 변경 */
+}
+
+.login {
+  width: 410px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login h2 {
+  padding: 0 0 20px;
+  text-align: center;
+  line-height: 1;
+  font-size: 32px;
+}
+
+.login ul {
+  padding: 40px 0 33px;
+}
+
+.login li {
+  padding: 0 0 12px;
+}
+
+.login li input {
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+  text-indent: 16px;
+}
+
+.login li input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #9fa19f;
+}
+
+.login button {
+  width: 100%;
+  height: 56px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo-container {
+  position: absolute;
   
-  header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
-  
-  #loginSection {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  #loginSection h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  #loginForm {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #loginForm label {
-    margin-bottom: 8px;
-  }
-  
-  #loginForm input {
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  #loginForm input[type="submit"] {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-  }
-  
-  #loginForm input[type="submit"]:hover {
-    background-color: #555;
-  }
-  
-  /* 추가된 부분: 회원가입 버튼 스타일 제거 */
-  
+}

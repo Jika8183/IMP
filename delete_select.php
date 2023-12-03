@@ -6,20 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>데이터 삭제</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #FEFFDE; /* 배경색 변경 */
+    }
 
-        form {
-            margin-top: 20px;
-        }
+    h2 {
+        color: #52734D; /* 헤더 텍스트 색상 변경 */
+    }
 
-        select, input, button {
-            padding: 8px;
-            margin-right: 10px;
-        }
-    </style>
+    form {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    label {
+        margin-right: 10px;
+        color: #52734D; /* 라벨 텍스트 색상 변경 */
+    }
+
+    select, input, button {
+        padding: 8px;
+        margin-right: 10px;
+        border: 1px solid #52734D; /* 테두리 스타일 변경 */
+    }
+
+    button {
+        background-color: #52734D; /* 버튼 배경색 변경 */
+        color: #FEFFDE; /* 버튼 텍스트 색상 변경 */
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
     <h2>데이터 삭제</h2>

@@ -11,16 +11,21 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
+            background-color: #FEFFDE; /* 추가 */
         }
 
         header {
             position: fixed;
             width: 100%;
-            background-color: #f2f2f2;
+            background-color: #91C788; /* 변경 */
             padding: 10px;
             text-align: center;
             top: 0;
             z-index: 1000; /* 다른 요소 위에 표시하기 위한 z-index 값 */
+        }
+
+        h1 {
+            color: #52734D; /* 추가 */
         }
 
         table {
@@ -36,15 +41,30 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #91C788; /* 변경 */
+            color: #FEFFDE; /* 추가 */
         }
 
-        button {
+        form {
+            margin-top: 20px;
+        }
+
+        input, button {
             padding: 8px;
-            margin-top: 10px;
             margin-right: 10px;
         }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            background-color: #91C788; /* 변경 */
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+            color: #FEFFDE; /* 추가 */
+        }
     </style>
+
 </head>
 <body>
 

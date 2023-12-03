@@ -9,6 +9,11 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #FEFFDE; /* 배경색 변경 */
+        }
+
+        h2 {
+            color: #52734D; /* 헤더 텍스트 색상 변경 */
         }
 
         form {
@@ -28,12 +33,18 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #91C788;
+            color: #FEFFDE; /* 헤더 텍스트 색상 변경 */
         }
 
         input, button {
             padding: 8px;
             margin-right: 10px;
+        }
+
+        button {
+            background-color: #52734D; /* 배경색 변경 */
+            color: #FEFFDE; /* 텍스트 색상 변경 */
         }
     </style>
 </head>
